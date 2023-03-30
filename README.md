@@ -1,4 +1,6 @@
-### Practical Cheminformatics Blog Posts
+## Practical Cheminformatics Blog Posts
+
+## MolSkill
 
 This repo contains code from various posts from the [Practical Cheminformatics blog](https://practicalcheminformatics.blogspot.com)
 
