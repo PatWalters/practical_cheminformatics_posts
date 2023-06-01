@@ -8,5 +8,5 @@ Internal_ML_model.ipynb - train and test a solubility model using a solubility d
 
 evaluate_SFI.ipynb - evaluate a solubility dataset using the [Solubility Forecast Index](https://www.sciencedirect.com/science/article/pii/S1359644610001923?via%3Dihub)
 
-literature_solubility_model.ipynb - build a solubility model using literature data from the Therapeutic Data Commons
+literature_solubility_model.ipynb - build a solubility model using literature data from the [Therapeutic Data Commons](https://tdcommons.ai/)
 
