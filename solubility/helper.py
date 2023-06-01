@@ -8,6 +8,9 @@ from rdkit import Chem
 from rdkit.Chem import MolFromSmiles
 from rdkit.Chem.Scaffolds import MurckoScaffold
 
+### This code was borrowed from ChemProp
+### https://github.com/chemprop/chemprop
+
 def split_by_lengths(seq, num_list):
     """
     Splits the input sequence seq into variably-sized chunks determined by the entries in num_list.
@@ -134,4 +137,5 @@ def scaffold_split(data,
     #print(train)
     #print(test)
     return train, test
+
 

@@ -4,6 +4,8 @@ import seaborn as sns
 import bootstrapped.bootstrap as bs
 from scipy.stats import pearsonr
 
+### The bootstrapping routines were adapted from https://github.com/openforcefield/protein-ligand-benchmark-livecoms
+
 def MAE_function(values):
     return np.mean(values,axis=1)
 
