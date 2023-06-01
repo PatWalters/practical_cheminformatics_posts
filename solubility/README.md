@@ -1,4 +1,4 @@
-preprocess_data.ipynb - A bit of data preprocessing
+preprocess_data.ipynb - A bit of data preprocessing.  **Please run this notebook before running any of the others**
 
 ESOL.ipynb - evaluate a solubility dataset using [ESOL](https://pubs.acs.org/doi/10.1021/ci034243x)
 
