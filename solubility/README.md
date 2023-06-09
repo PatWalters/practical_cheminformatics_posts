@@ -12,6 +12,7 @@ literature_solubility_model.ipynb - build a solubility model using literature da
 
 generate_SIMPD_sets.ipynb - split into training and test sets using the [SIMPD alogrithm](https://github.com/rinikerlab/molecular_time_series) which approximates time splits
 
+### Acknowledgments
 I borrowed a lot of code to put this together.  I'd like to thank the authors.
 
 ga_lib_3.py came from [https://github.com/rinikerlab/molecular_time_series](https://github.com/rinikerlab/molecular_time_series)
