@@ -44,6 +44,7 @@ def plot_regression(truth, pred):
             scatter_kws=dict(alpha=0.2, s=20, color='blue', edgecolors='white'))
     g.axes[0][0].set_xlabel("Experimental LogS")
     g.axes[0][0].set_ylabel("Predicted LogS")
+    g.axes[0][0].set_ylim(-10,0)
     g.axes[0][0].text(-6.5,-0.5,f"r={r:.2f} [{r_lb:.2f},{r_ub:.2f}]")
     g.axes[0][0].text(-6.5,-1.5,f"MAE={mae:.2f} [{mae_lb:.2f},{mae_ub:.2f}]")
 
