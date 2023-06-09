@@ -35,7 +35,7 @@ def bootstrap_pearsonr(truth, pred):
              stat_func=pearsonr_function, alpha=0.5, is_pivotal=True, return_distribution=True)
     return np.percentile(bs_dist,2.5),pearsonr(truth,pred)[0],np.percentile(bs_dist,97.5)
 
-def plot_regression(truth, pred):
+def plot_regression(truth, pred, scale_y_axis=True):
     tmp_df = pd.DataFrame({"truth": truth, "pred": pred})
     mae_lb, mae, mae_ub = bootstrap_MAE(truth, pred)
     r_lb, r, r_ub = bootstrap_pearsonr(truth, pred)
@@ -44,7 +44,8 @@ def plot_regression(truth, pred):
             scatter_kws=dict(alpha=0.2, s=20, color='blue', edgecolors='white'))
     g.axes[0][0].set_xlabel("Experimental LogS")
     g.axes[0][0].set_ylabel("Predicted LogS")
-    g.axes[0][0].set_ylim(-10,0)
+    if scale_y_axis:
+        g.axes[0][0].set_ylim(-10,0)
     g.axes[0][0].text(-6.5,-0.5,f"r={r:.2f} [{r_lb:.2f},{r_ub:.2f}]")
     g.axes[0][0].text(-6.5,-1.5,f"MAE={mae:.2f} [{mae_lb:.2f},{mae_ub:.2f}]")
 
