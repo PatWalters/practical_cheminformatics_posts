@@ -24,7 +24,7 @@ Thanks to Mary Pittman for the installation note
 
 ## Solubility
 
-Please see README.md in the solubility directory
+Please see README.md in the **solubility** directory
 
 
 
