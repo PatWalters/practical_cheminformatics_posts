@@ -9,10 +9,10 @@ pip install pandas rdkit scikit-learn seaborn bootstrapped install datamol molfe
 ### Scripts
 preprocess_data.ipynb - A bit of data preprocessing.   
 ESOL.ipynb - evaluate a solubility dataset using [ESOL](https://pubs.acs.org/doi/10.1021/ci034243x).   
-GSE_solubility.ipynb - evaluate a solubility dataset using the [General Solubility Equation](https://pubs.acs.org/doi/10.1021/ci000338c) together with a melting point model recently published by [Zhu](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00308).   
-cross_validate_ML_model.ipynb - train and test a solubility model using a Biogen Solubility Dataset published by [Fang](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160).     
+GSE_solubility.ipynb - evaluate a solubility dataset using the [General Solubility Equation](https://pubs.acs.org/doi/10.1021/ci000338c) together with a melting point model recently published by [Zhu](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00308).      
 evaluate_SFI.ipynb - evaluate a solubility dataset using the [Solubility Forecast Index](https://www.sciencedirect.com/science/article/pii/S1359644610001923?via%3Dihub).   
 literature_solubility_model.ipynb - build a solubility model using the AqSolDB dataset from the [Therapeutic Data Commons](https://tdcommons.ai/single_pred_tasks/adme/#solubility-aqsoldb).   
+cross_validate_ML_model.ipynb - train and test a solubility model using a Biogen Solubility Dataset published by [Fang](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160).  
 generate_SIMPD_sets.ipynb - split into training and test sets using the [SIMPD alogrithm](https://github.com/rinikerlab/molecular_time_series) which approximates time splits.    
 
 ### Acknowledgments 
