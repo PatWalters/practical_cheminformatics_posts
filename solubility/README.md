@@ -4,7 +4,7 @@ preprocess_data.ipynb - A bit of data preprocessing
 
 ESOL.ipynb - evaluate a solubility dataset using [ESOL](https://pubs.acs.org/doi/10.1021/ci034243x)
 
-GSE_solubility.ipynb - evaluate a solubility dataset using the [General Solubility Equation](https://pubs.acs.org/doi/10.1021/ci000338c)
+GSE_solubility.ipynb - evaluate a solubility dataset using the [General Solubility Equation](https://pubs.acs.org/doi/10.1021/ci000338c) together with a melting point model recently published by [Zhu](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00308)
 
 cross_validate_ML_model.ipynb - train and test a solubility model using a solubility dataset
 
