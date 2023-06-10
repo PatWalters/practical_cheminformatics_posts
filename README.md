@@ -22,6 +22,9 @@ pip install rdkit PyTDC useful_rdkit_utils tqdm scikit-learn numpy<1.24 seaborn 
 ```
 Thanks to Mary Pittman for the installation note
 
+## Solubility
+
+Please see README.md in the solubility directory
 
 
 
