@@ -5,14 +5,9 @@ import os
 import lightgbm as lgbm
 from rdkit import Chem
 import useful_rdkit_utils as uru
-from constants import SFI_MODULE
-import chembl_downloader
-
 
 class LogDPredictor:
     def __init__(self, model_file_name=None):
-        if model_file_name is None:
-            model_file_name = SFI_MODULE.join(chembl_downloader.latest(), name="model.txt")
         if not os.path.exists(model_file_name):
             print(f"Error: Could not find model file {model_file_name}", file=sys.stderr)
             sys.exit(0)
