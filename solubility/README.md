@@ -1,6 +1,11 @@
 ### Introduction
 This is the code to accompany the Practical Cheminformatics post "Getting Real with Molecular Property Prediction".  The code in this repo uses a number of published models to evaluate aqueous solubiliity predictions on the a dataset published by [Fang and coworkers](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160) from Biogen.  Each of the Jupyter notebooks below uses a different solubility prediction method.  All of the input data and intermediate files are provided so it should be possilble to run any of the notebooks independently. 
 
+### Installation
+```bash
+pip install pandas rdkit scikit-learn seaborn bootstrapped install datamol molfeat scipy tqdm lightgbm useful_rdkit_utils chembl_downloader pymoo==0.5 xgboost PyTDC
+```
+
 ### Scripts
 preprocess_data.ipynb - A bit of data preprocessing.   
 ESOL.ipynb - evaluate a solubility dataset using [ESOL](https://pubs.acs.org/doi/10.1021/ci034243x).   
