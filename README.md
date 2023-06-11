@@ -2,6 +2,14 @@
 
 This repo contains code from various posts from the [Practical Cheminformatics blog](https://practicalcheminformatics.blogspot.com)
 
+## Build a QSAR model in 8 lines of Python
+### Installation
+```bash
+conda create -n qsar python=3.9
+conda activate qsar
+pip install rdkit pandas datamol molfeat scikit-learn numpy yellowbrick jupyter
+```
+
 ## MolSkill
 
 The **molskill** directory contains the code for the post ["Getting Inside the Mind of the Medicinal Chemist with Machine Learning"](https://practicalcheminformatics.blogspot.com/2023/04/getting-inside-mind-of-medicinal.html)
