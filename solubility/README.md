@@ -1,5 +1,5 @@
 ### Introduction
-This is the code to accompany the Practical Cheminformatics post "Getting Real with Molecular Property Prediction".  The code in this repo uses a number of published models to evaluate aqueous solubiliity predictions on the a dataset published by [Fang and coworkers](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160) from Biogen.  Each of the Jupyter notebooks below uses a different solubility prediction method.  All of the input data and intermediate files are provided so it should be possilble to run any of the notebooks independently. 
+This is the code to accompany the Practical Cheminformatics post ["Getting Real with Molecular Property Prediction"](https://practicalcheminformatics.blogspot.com/2023/06/getting-real-with-molecular-property.html).  The code in this repo uses a number of published models to evaluate aqueous solubiliity predictions on the a dataset published by [Fang and coworkers](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160) from Biogen.  Each of the Jupyter notebooks below uses a different solubility prediction method.  All of the input data and intermediate files are provided so it should be possilble to run any of the notebooks independently. 
 
 ### Installation
 ```bash
