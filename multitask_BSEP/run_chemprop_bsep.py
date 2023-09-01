@@ -4,7 +4,7 @@ import os
 from tqdm.auto import tqdm
 import chemprop
 
-base_path = "data/BSEP"
+base_path = "BSEP"
 max_folds = 1
 for idx in tqdm(range(0,max_folds)):
     for split in ["random","scaffold"]:
