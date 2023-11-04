@@ -14,7 +14,7 @@ generate_validation_data.ipynb - split data into training and test sets
 helper.py - utility functions for scaffold splits
 
 Build Models  
-build_lightgbm_model.ipynb - build LightGBM models. This is pretty quick
+build_lightgbm_model.ipynb - build LightGBM models. This is pretty quick  
 run_chemprop_bsep.py - build ChemProp models. This takes ~12 hrs
 
 Data Integration  
