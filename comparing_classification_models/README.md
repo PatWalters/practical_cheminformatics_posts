@@ -4,6 +4,11 @@
 ML_Classification_Comparison.ipynb - main demo notebook for the blog post
 BSEP_classification_ChemProp_LightGBM.csv - combined results from LightGBM and ChemProp
 
+extra_notebooks/  
+distribution_experiments.ipynb - some plots for the blog post  
+friedman_example.ipynb - an explanation of Friedman's test  
+plot_t-test_and_wilcoxon.ipynb - more plots for the blog post  
+
 #### Model Building
 To reproduce the model building, follow these steps
 1. generate_validation_data.ipynb
@@ -13,11 +18,6 @@ To reproduce the model building, follow these steps
 5. analyze_bsep_models.ipynb
 
 #### Scripts for Model Building
-extra_notebooks/
-distribution_experiments.ipynb - some plots for the blog post
-friedman_example.ipynb - an explanation of Friedman's test
-plot_t-test_and_wilcoxon.ipynb - more plots for the blog post
-
 model_building/
 Setup
 generate_validation_data.ipynb - split data into training and test sets
