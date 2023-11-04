@@ -21,8 +21,8 @@ run_chemprop_bsep.py - build ChemProp models, this takes ~12 hrs
 analyze_bsep_models.ipynb
 
 #### Datafiles
-MTL_2_input_BSEP_herg_BBB_PDK_HIV.csv - original data provided by authors
-lightgbm_classifciation_results.csv - per molecule results from LightGBM
-lgbm_result.csv - summary statistics for LightGBM
-BSEP_classification_preds.csv - ChemProp predictions
-BSEP_classification_ChemProp_LightGBM.csv - combined results from LightGBM and ChemProp
+MTL_2_input_BSEP_herg_BBB_PDK_HIV.csv - original data provided by authors  
+lightgbm_classifciation_results.csv - per molecule results from LightGBM  
+lgbm_result.csv - summary statistics for LightGBM  
+BSEP_classification_preds.csv - ChemProp predictions  
+BSEP_classification_ChemProp_LightGBM.csv - combined results from LightGBM and ChemProp  
