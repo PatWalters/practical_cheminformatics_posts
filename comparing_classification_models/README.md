@@ -1,7 +1,7 @@
 ### Comparing Classification Models - You're Probably Doing It Wrong
 
+ML_Classification_Comparison.ipynb - main demo notebook for the blog post 
 BSEP_classification_ChemProp_LightGBM.csv - combined results from LightGBM and ChemProp   
-ML_Classification_Comparison.ipynb - main demo notebook for the blog post  
 
 extra_notebooks/  
 distribution_experiments.ipynb - some plots for the blog post  
