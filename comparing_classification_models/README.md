@@ -4,6 +4,7 @@
 ML_Classification_Comparison.ipynb - main demo notebook for the blog post
 BSEP_classification_ChemProp_LightGBM.csv - combined results from LightGBM and ChemProp
 
+#### Model Building
 To reproduce the model building, follow these steps
 1. generate_validation_data.ipynb
 2. build_lightgbm_model.ipynb
