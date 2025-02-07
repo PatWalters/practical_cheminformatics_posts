@@ -10,7 +10,7 @@ difference between methods.
 ```shell
 uv venv --python 3.11
 source .venv/bin/activate
-uv pip install rdkit useful_rdkit_utils scikit-learn chemprop tabpfn lightgbm jupyter statannotations statsmodels 
+uv pip install rdkit useful_rdkit_utils scikit-learn chemprop tabpfn lightgbm jupyter statannotations statsmodels polaris-lib 
 ```
 
 ### Running Benchmarks
