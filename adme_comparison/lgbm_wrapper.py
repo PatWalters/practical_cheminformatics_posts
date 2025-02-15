@@ -8,6 +8,32 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import useful_rdkit_utils as uru
 import warnings
+from calc_osmordred import calc_osmordred
+
+class LGBMOsmordredWrapper:
+    def __init__(self, y_col):
+        self.lgbm = LGBMRegressor(verbose=-1)
+        self.y_col = y_col
+        self.desc_name = 'desc'
+
+    def fit(self, train):
+        train[self.desc_name] = train.SMILES.apply(calc_osmordred)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", FutureWarning)
+            self.lgbm.fit(np.stack(train[self.desc_name]),train[self.y_col])
+
+    def predict(self, test):
+        test[self.desc_name] = test.SMILES.apply(calc_osmordred)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", FutureWarning)
+            pred = self.lgbm.predict(np.stack(np.stack(test[self.desc_name])))
+        return pred
+
+    def validate(self, train, test):
+        self.fit(train)
+        pred = self.predict(test)
+        return pred
+
 
 class LGBMPropWrapper:
     def __init__(self, y_col):
@@ -67,7 +93,7 @@ class LGBMMorganCountWrapper:
 def main():
     df = pd.read_csv("https://raw.githubusercontent.com/PatWalters/datafiles/refs/heads/main/biogen_logS.csv")
     train, test = train_test_split(df)
-    lgbm_wrapper = LGBMMorganCountWrapper("logS")
+    lgbm_wrapper = LGBMOsmordredWrapper("logS")
     pred = lgbm_wrapper.validate(train, test)
     print(pred)
 

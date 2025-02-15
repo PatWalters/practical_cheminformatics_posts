@@ -640,7 +640,7 @@ Mol716,35774799,c1ccc(-c2noc(NCC3CCC3)n2)cc1,emolecules,1.540079089
 Mol717,32161047,c1ccc(-c2n[nH]c(C3CCN(c4cnc5ccccc5n4)CC3)n2)cc1,emolecules,0.792741786
 Mol718,379670,CO[C@H]1CC[C@H](C(=O)NC[C@H]2CC[C@H](c3nnc(-c4nccc5ccccc45)o3)CC2)CC1,emolecules,1.326540669
 Mol719,30455813,COc1cccc(OCCCn2cncc2-c2cc3c(cc2OC)OCCCO3)c1,emolecules,1.979775933
-Mol720,18867454,COc1ccc(-c2nc(CC(N)=O)sc2C)cc1.Cl,emolecules,1.481442629
+Mol720,18867454,COc1ccc(-c2nc(CC(N)=O)sc2C)cc1,emolecules,1.481442629
 Mol721,32005722,O=C1NCCCCC1NC(=O)N1CCc2sccc2C1,emolecules,1.695481676
 Mol722,4847598,O=C(O)c1ccc(=O)n(CCc2c[nH]c3ccccc23)c1,emolecules,1.627365857
 Mol723,233395,Cn1ccc(CN2CCC(c3cnccn3)CC2)n1,emolecules,1.698970004
