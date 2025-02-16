@@ -158,7 +158,7 @@ def run_chemprop_rdkit(train, test, y_col, num_epochs=20, accerlerator="cpu"):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("/Users/pwalters/software/benchmark/data/biogen_logS.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/PatWalters/datafiles/refs/heads/main/biogen_logS.csv")
     y_col = "logS"
     train, test = train_test_split(df)
     model = ChemPropWrapper(y_col)
