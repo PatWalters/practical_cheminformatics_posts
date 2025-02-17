@@ -136,7 +136,7 @@ def run_chemprop_rdkit(train, test, y_col, num_epochs=20, accerlerator="cpu"):
 
     batch_norm = True
     agg = nn.MeanAggregation()
-    metric_list = [nn.metrics.RMSEMetric()]
+    metric_list = [nn.metrics.RMSE()]
     X_d_transform = nn.ScaleTransform.from_standard_scaler(extra_datapoint_descriptors_scaler)
     mpnn = models.MPNN(mp, agg, ffn, metrics=metric_list, X_d_transform=X_d_transform, batch_norm=batch_norm)
 
@@ -158,9 +158,10 @@ def run_chemprop_rdkit(train, test, y_col, num_epochs=20, accerlerator="cpu"):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("https://raw.githubusercontent.com/PatWalters/datafiles/refs/heads/main/biogen_logS.csv")
+    #df = pd.read_csv("/Users/pwalters/software/benchmark/data/biogen_logS.csv")
+    df = pd.read_csv("biogen_logS.csv")
     y_col = "logS"
     train, test = train_test_split(df)
-    model = ChemPropWrapper(y_col)
+    model = ChemPropRDKitWrapper(y_col)
     pred = model.validate(train, test)
     print(pred)

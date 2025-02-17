@@ -8,7 +8,12 @@ from tqdm import tqdm
 
 import osmordred as rd
 import useful_rdkit_utils as uru
+import numpy as np
 
+def find_finite_descriptors(df,col):
+    desc = df[col]
+    good_cols = np.isfinite(np.stack(desc.values)).all(0)
+    return good_cols
 
 # Define descriptor computation function
 def calc_osmordred(smiles, version=2):        

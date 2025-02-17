@@ -7,29 +7,35 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import useful_rdkit_utils as uru
+from calc_osmordred import calc_osmordred, find_finite_descriptors
 import warnings
-from calc_osmordred import calc_osmordred
+
 
 class LGBMOsmordredWrapper:
     def __init__(self, y_col):
-        self.lgbm = LGBMRegressor(verbose=-1)
+        self.lgbm = LGBMRegressor()
         self.y_col = y_col
         self.desc_name = 'desc'
+        self.good_cols = None
 
     def fit(self, train):
-        train[self.desc_name] = train.SMILES.apply(calc_osmordred)
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", FutureWarning)
             self.lgbm.fit(np.stack(train[self.desc_name]),train[self.y_col])
 
     def predict(self, test):
-        test[self.desc_name] = test.SMILES.apply(calc_osmordred)
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", FutureWarning)
             pred = self.lgbm.predict(np.stack(np.stack(test[self.desc_name])))
         return pred
 
     def validate(self, train, test):
+        all_df = pd.concat([train,test]).copy()
+        all_df[self.desc_name] = all_df.SMILES.apply(calc_osmordred)
+        self.good_cols = find_finite_descriptors(all_df,"desc")
+        all_df[self.desc_name] = np.stack(all_df[self.desc_name].values)[:,self.good_cols].tolist()
+        train = all_df.head(len(train))
+        test = all_df.tail(len(test))
         self.fit(train)
         pred = self.predict(test)
         return pred
@@ -91,7 +97,8 @@ class LGBMMorganCountWrapper:
 
 
 def main():
-    df = pd.read_csv("https://raw.githubusercontent.com/PatWalters/datafiles/refs/heads/main/biogen_logS.csv")
+    #df = pd.read_csv("https://raw.githubusercontent.com/PatWalters/datafiles/refs/heads/main/biogen_logS.csv")
+    df = pd.read_csv("biogen_logS.csv")
     train, test = train_test_split(df)
     lgbm_wrapper = LGBMOsmordredWrapper("logS")
     pred = lgbm_wrapper.validate(train, test)
