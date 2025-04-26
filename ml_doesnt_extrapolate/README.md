@@ -1,0 +1,1 @@
+This code accompanies my blog post [“Machine Learning Models Don’t Extrapolate”](https://patwalters.github.io/Machine-Learning-Models-Dont-Extrapolate/).   To follow the examples from the post, please see the notebook [ML_doesnt_extrapolate.ipynb](https://github.com/PatWalters/practical_cheminformatics_posts/blob/main/ml_doesnt_extrapolate/ML_doesnt_extrapolate.ipynb).
