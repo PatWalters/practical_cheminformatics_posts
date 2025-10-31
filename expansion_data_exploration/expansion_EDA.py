@@ -1,4 +1,4 @@
-import marimo
+<import marimo
 
 __generated_with = "0.17.3"
 app = marimo.App(width="full")
