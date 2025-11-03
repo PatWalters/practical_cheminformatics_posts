@@ -20,7 +20,7 @@
 import marimo
 
 __generated_with = "0.17.5"
-app = marimo.App(width="medium")
+app = marimo.App(width="full")
 
 
 @app.cell(hide_code=True)
@@ -28,10 +28,9 @@ def _(mo):
     mo.md(r"""
     ## Performing Exploratory Data Analysis on the OpenADMET ExpansionRx Blind Challenge Dataset
 
-        When encountering a new dataset, many people quickly jump into building a machine learning model. I prefer to start with exploratory analysis to gain a better understanding of the data. This notebook performs initial exploratory data analysis (EDA) on the OpenADMET ExpansionRx Bl\
-    ind Challenge Dataset. Instead of using Jupyter for this analysis, I'm using **marimo**, a new data science notebook environment that allows you to create interactive data apps with minimal code. I think of **marimo** as a "better Jupyter," because it has several features that make b\
-    uilding interactive data apps easier, including built-in support for Altair charts, simple layout options, and interactive widgets. I plan to publish a series of blog posts explaining **marimo's** capabilities and how it can be used for data science and cheminformatics. I'm also work\
-    ing on a repository titled "Practical Cheminformatics with Marimo," which showcases some ways to use **marimo** for cheminformatics tasks. Please consider this notebook a preview of what's to come. For those interested in learning more about **marimo**, I recommend starting with the \
+        When encountering a new dataset, many people quickly jump into building a machine learning model. I prefer to start with exploratory analysis to gain a better understanding of the data. This notebook performs initial exploratory data analysis (EDA) on the OpenADMET ExpansionRx Blind Challenge Dataset. Instead of using Jupyter for this analysis, I'm using **marimo**, a new data science notebook environment that allows you to create interactive data apps with minimal code. I think of **marimo** as a "better Jupyter," because it has several features that make b\
+    uilding interactive data apps easier, including built-in support for Altair charts, simple layout options, and interactive widgets. I plan to publish a series of blog posts explaining **marimo's** capabilities and how it can be used for data science and cheminformatics. I'm also work
+    ing on a repository titled "Practical Cheminformatics with Marimo," which showcases some ways to use **marimo** for cheminformatics tasks. Please consider this notebook a preview of what's to come. For those interested in learning more about **marimo**, I recommend starting with the
     following resources.
 
         - Marimo Documentation: https://marimo.readthedocs.io/en/latest/
@@ -53,8 +52,9 @@ def _(mo):
         ```
         3. Use the `marimo` command to run the notebook:
         ```bash
-        marimo edit expansion_data_analysis.py
+        marimo edit expansion_data_analysis.py --sandbox
         ```
+        This command installs all the dependencies and launches the marimo notebook in a sandboxed environment.
         4. Enjoy!
     """)
     return
@@ -64,8 +64,8 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     Import the libraries we will need for the analysis.
-    This notebook uses [BitBIRCH-Lean](https://www.biorxiv.org/content/10.1101/2025.10.22.684015v1) - a more memory efficient version of the [BitBIRCH](https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00030k) clustering methods developed by the [Miranda-Quintan research group at the University of Florida](https://quintana.chem.ufl.edu/).
-    **Before running this notebook, please install bblean from https://github.com/mqcomplab/bblean/tree/main**.
+    This notebook uses [BitBIRCH-Lean](https://www.biorxiv.org/content/10.1101/2025.10.22.684015v1) - a more memory efficient version of the [BitBIRCH](https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00030k) clustering method developed by the [Miranda-Quintan research group at the University of Florida](https://quintana.chem.ufl.edu/).
+    If you run this notebook with the `--sandbox` flag, the dependencies will be installed for you.
 
     As a first step, we'll grab a function I wrote to wrap bbllean from GitHub.
     """)
@@ -121,8 +121,8 @@ def _():
 @app.cell
 def _():
     # set a notebook global to determine whether progress bars are displayed.  I mainly did this to make the HTML version look nicer. 
-    hide_progress = False
-    return
+    hide_progress = True
+    return (hide_progress,)
 
 
 @app.cell(hide_code=True)
@@ -149,7 +149,7 @@ def _(load_dataset):
     test_ds = load_dataset("openadmet/openadmet-expansionrx-challenge-test-data-blinded")
     test_df = test_ds["test"].to_pandas()
     test_df
-    return
+    return (test_df,)
 
 
 @app.cell(hide_code=True)
@@ -287,7 +287,7 @@ def _(assay_cols, np, pd, tqdm, train_df, uru):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### 8. Calcualate Chemical Fingerprints
+    ### 8. Calculate Chemical Fingerprints
     We now add two fingerprint columns to the dataframe.
     - `fp` - a binary fingerprint as a numpy array.  We can use this fingerprint for clustering or machine learning models.
     - `morgan` - an RDKit Morgan fingerprint suitable for molecular similarlity calculations.
@@ -302,7 +302,7 @@ def _(train_df, uru):
     smi2fp = uru.Smi2Fp()
     train_df['fp'] = train_df.SMILES.apply(smi2fp.get_np)
     train_df['morgan'] = train_df.SMILES.apply(smi2fp.get_fp)
-    return
+    return (smi2fp,)
 
 
 @app.cell(hide_code=True)
@@ -378,7 +378,7 @@ def _(PCA, np, pd):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Here we calcuate the principal components from the "fp" column of the training dataframe.
+    Here we calcuate the principal components from the `fp` column of the training dataframe.
     """)
     return
 
@@ -523,10 +523,10 @@ def _(mo):
 
 
 @app.cell
-def _(DataStructs, combinations, np, pd, tqdm, train_df):
+def _(DataStructs, combinations, hide_progress, np, pd, tqdm, train_df):
     def calc_sali(df,assay):
         res_list = []
-        for k,v in tqdm(train_df.groupby("cluster"),desc=assay,disable=True):
+        for k,v in tqdm(train_df.groupby("cluster"),desc=assay,disable=hide_progress):
             v = v.dropna(subset=assay).copy()
             v.sort_values(assay,inplace=True)
             for (_,row_1),(_,row_2) in combinations(v.iterrows(),2):
@@ -608,6 +608,60 @@ def _(assay_cols, df_list, np):
 def _(assay_res, pd, sns):
     res_df = pd.DataFrame(assay_res,columns=["Assay","Cliffs"])
     sns.barplot(y="Assay",x="Cliffs",data=res_df)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ### 12. Compare the Training and Test Sets
+    Before emabarking on any modeling expercise, it's a good idea to calculate the similarity of the molecules in the training set to those in the test set.  I wrote a function `compare_datasets` in [useful_rdkit_utils](https://github.com/PatWalters/useful_rdkit_utils) to make this easy.
+    """)
+    return
+
+
+@app.cell
+def _(assay_cols, hide_progress, pd, smi2fp, test_df, tqdm, train_df, uru):
+    # calculate morgan fingerprints for the test set
+    test_df['morgan'] = test_df.SMILES.apply(smi2fp.get_fp)
+    sim_df_list = []
+    for acol in tqdm(assay_cols,disable=hide_progress):
+        # drop training set rows without data
+        tmp_sim_df = train_df.dropna(subset=acol)
+        max_sim = uru.compare_datasets(tmp_sim_df.morgan, test_df.morgan)
+        sim_df = pd.DataFrame({"assay" : acol, "sim" : max_sim })
+        sim_df_list.append(sim_df)
+    return (sim_df_list,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Finally, we can plot the train/test similarity as boxplots.  I  find it easier when I do the box plots horizontally. From the boxplots we can see that the median train/test similarity is around 0.5 for most of the assays. It's lower for Log_MGMB where we have fewer datapoints.
+    """)
+    return
+
+
+@app.cell
+def _(pd, sim_df_list, sns):
+    sim_ax = sns.boxplot(y="assay",x="sim",data=pd.concat(sim_df_list),color="lightblue")
+    sim_ax.set_xlabel("Tanimoto Similarity of Test Set to Training Set")
+    sim_ax.set_ylabel("Assay")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ### Conclusion
+    I hope this notebook has shown you a few tricks for EDA and has demonstrated some of the cool things you can do with **marimo**.  A lot of the code here will also work in Jupyter, but you won't get the nifty interactive views.  As I mentioned at the begining, I have some additional **marimo** notebooks for Cheminformatics in the works.  Those should be out in a few weeks.
+
+    ### Acknowledgements
+
+    I wouldn't have tried **marimo** if it weren't for blogs by [Eric Ma](https://ericmjl.github.io/blog/) and [Srijit Seal](https://srijitseal.com).  Those guys are a constant source of inspiration.
+
+    Speical thanks to the **marimo** team.  They've created an amazing tool, their support is fantastic, and [Vincent's videos](https://www.youtube.com/@marimo-team) are the best!
+    """)
     return
 
 
