@@ -658,9 +658,7 @@ def _(mo):
 
     ### Acknowledgements
 
-    I wouldn't have tried **marimo** if it weren't for blogs by [Eric Ma](https://ericmjl.github.io/blog/) and [Srijit Seal](https://srijitseal.com).  Those guys are a constant source of inspiration.
-
-    Speical thanks to the **marimo** team.  They've created an amazing tool, their support is fantastic, and [Vincent's videos](https://www.youtube.com/@marimo-team) are the best!
+    I wouldn't have tried **marimo** if it weren't for blogs by [Eric Ma](https://ericmjl.github.io/blog/) and [Srijit Seal](https://srijitseal.com).  Those guys are a constant source of inspiration.  Thanks to Ramon Miranda-Quintana, Ignacio Pickering, and Kenneth Lopez Perez for their help with BitBIRCH and BBLean. Speical thanks to the **marimo** team.  They've created an amazing tool, their support is fantastic, and [Vincent's videos](https://www.youtube.com/@marimo-team) are the best!
     """)
     return
 
