@@ -126,7 +126,7 @@ def _():
 @app.cell
 def _():
     # set a notebook global to determine whether progress bars are displayed.  I mainly did this to make the HTML version look nicer. 
-    hide_progress = False
+    hide_progress = True
     return (hide_progress,)
 
 
