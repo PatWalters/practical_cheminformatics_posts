@@ -47,7 +47,7 @@ def _(mo):
         4. When you open an existing **marimo** notebook, it runs the code in all the cells. As a result, it can take some time to start. Wait for the spinning hourglass in the upper left corner to disappear.
 
         If you're viewing the static HTML version of this notebook, you're missing out on the interactivity that **marimo** offers. To experience the full features, please consider running this notebook in a **marimo** environment. It's easy to do:
-        1. Download this notebook from GitHub. Note that **marimo** notebooks are simply Python files with a .py extension.
+        1. Download [this notebook](https://raw.githubusercontent.com/PatWalters/practical_cheminformatics_posts/refs/heads/main/expansion_data_exploration/bblean_cluster.py) from GitHub. Note that **marimo** notebooks are simply Python files with a .py extension.
         2. Install marimo using the following command:
         ```bash
         pip install marimo
@@ -123,7 +123,7 @@ def _():
 @app.cell
 def _():
     # set a notebook global to determine whether progress bars are displayed.  I mainly did this to make the HTML version look nicer. 
-    hide_progress = True
+    hide_progress = False
     return (hide_progress,)
 
 
