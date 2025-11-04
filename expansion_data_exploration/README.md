@@ -42,7 +42,7 @@ The notebook uses inline dependency management (PEP 723) and will automatically 
 
 1. Install marimo:
    ```bash
-   pip install marimo
+   pip install uv marimo
    ```
 
 2. Run the notebook in sandbox mode (automatically installs dependencies):

@@ -19,8 +19,18 @@
 
 import marimo
 
-__generated_with = "0.17.5"
+__generated_with = "0.17.6"
 app = marimo.App(width="full")
+
+with app.setup:
+    # Initialization code that runs before all other cells
+
+    import requests
+    cluster_url = "https://raw.githubusercontent.com/PatWalters/practical_cheminformatics_posts/refs/heads/main/expansion_data_exploration/bblean_cluster.py"
+    response = requests.get(cluster_url)
+    response.raise_for_status()
+    with open("bblean_cluster.py","w") as ofs:
+        ofs.write(response.text)
 
 
 @app.cell(hide_code=True)
@@ -50,7 +60,7 @@ def _(mo):
         1. Download [this notebook](https://raw.githubusercontent.com/PatWalters/practical_cheminformatics_posts/refs/heads/main/expansion_data_exploration/bblean_cluster.py) from GitHub. Note that **marimo** notebooks are simply Python files with a .py extension.
         2. Install marimo using the following command:
         ```bash
-        pip install marimo
+        pip install uv marimo
         ```
         3. Use the `marimo` command to run the notebook:
         ```bash
@@ -76,16 +86,7 @@ def _(mo):
 
 @app.cell
 def _():
-    try:
-        from bblean_cluster import bblean_cluster
-    except (ModuleNotFoundError, FileNotFoundError):
-        import requests
-        cluster_url = "https://raw.githubusercontent.com/PatWalters/practical_cheminformatics_posts/refs/heads/main/expansion_data_exploration/bblean_cluster.py"
-        response = requests.get(cluster_url)
-        response.raise_for_status()
-        with open("bblean_cluster.py","w") as ofs:
-            ofs.write(response.text)
-    return (bblean_cluster,)
+    return
 
 
 @app.cell
@@ -103,11 +104,13 @@ def _():
     import marimo as mo                          # marimo notebook environment
     import altair as alt                         # interactive plotting
     from datasets import load_dataset            # loading datasets from HuggingFace
+    from bblean_cluster import bblean_cluster    # clustering
     return (
         Chem,
         DataStructs,
         PCA,
         alt,
+        bblean_cluster,
         combinations,
         load_dataset,
         mo,
