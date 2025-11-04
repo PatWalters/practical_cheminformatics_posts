@@ -1,4 +1,4 @@
-# Expansion Data Exploration
+# ExpansionRx Data Exploration
 
 This repository contains an exploratory data analysis (EDA) notebook and utilities for analyzing the OpenADMET ExpansionRx Blind Challenge Dataset. The project uses [marimo](https://marimo.readthedocs.io/) for interactive data science notebooks and [BitBIRCH-Lean](https://github.com/mqcomplab/bblean) for efficient molecular clustering.
 

@@ -28,6 +28,8 @@ def _(mo):
     mo.md(r"""
     ## Performing Exploratory Data Analysis on the OpenADMET ExpansionRx Blind Challenge Dataset
 
+    The code and notebook for this post can be found in this GitHub repo https://github.com/PatWalters/practical_cheminformatics_posts/tree/main/expansion_data_exploration
+
         When encountering a new dataset, many people quickly jump into building a machine learning model. I prefer to start with exploratory analysis to gain a better understanding of the data. This notebook performs initial exploratory data analysis (EDA) on the OpenADMET ExpansionRx Blind Challenge Dataset. Instead of using Jupyter for this analysis, I'm using **marimo**, a new data science notebook environment that allows you to create interactive data apps with minimal code. I think of **marimo** as a "better Jupyter," because it has several features that make b\
     uilding interactive data apps easier, including built-in support for Altair charts, simple layout options, and interactive widgets. I plan to publish a series of blog posts explaining **marimo's** capabilities and how it can be used for data science and cheminformatics. I'm also work
     ing on a repository titled "Practical Cheminformatics with Marimo," which showcases some ways to use **marimo** for cheminformatics tasks. Please consider this notebook a preview of what's to come. For those interested in learning more about **marimo**, I recommend starting with the
