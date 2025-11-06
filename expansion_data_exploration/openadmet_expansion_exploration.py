@@ -1,25 +1,25 @@
 # /// script
 # requires-python = ">=3.11"
 # dependencies = [
-#     "altair==5.5.0",
-#     "datasets==4.3.0",
+#     "altair",
+#     "datasets",
 #     "marimo",
-#     "matplotlib==3.10.7",
-#     "numpy==2.3.4",
-#     "pandas==2.3.3",
-#     "rdkit==2025.9.1",
-#     "requests==2.32.5",
-#     "scikit-learn==1.7.2",
-#     "seaborn==0.13.2",
-#     "tqdm==4.67.1",
-#     "useful-rdkit-utils==0.92",
-#     "bblean @ git+https://github.com/mqcomplab/bblean",
+#     "matplotlib",
+#     "numpy",
+#     "pandas",
+#     "rdkit",
+#     "requests",
+#     "scikit-learn",
+#     "seaborn",
+#     "tqdm",
+#     "useful-rdkit-utils",
+#     "bblean",
 # ]
 # ///
 
 import marimo
 
-__generated_with = "0.17.6"
+__generated_with = "0.17.7"
 app = marimo.App(width="full")
 
 with app.setup:
