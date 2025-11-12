@@ -1,18 +1,18 @@
 # /// script
 # requires-python = ">=3.11"
 # dependencies = [
-#     "altair",
-#     "datasets",
+#     "altair==5.5.0",
+#     "datasets==4.4.1",
 #     "marimo",
-#     "matplotlib",
-#     "numpy",
-#     "pandas",
-#     "rdkit",
-#     "requests",
-#     "scikit-learn",
-#     "seaborn",
-#     "tqdm",
-#     "useful-rdkit-utils",
+#     "matplotlib==3.10.7",
+#     "numpy==2.3.4",
+#     "pandas==2.3.3",
+#     "rdkit==2025.9.1",
+#     "requests==2.32.5",
+#     "scikit-learn==1.7.2",
+#     "seaborn==0.13.2",
+#     "tqdm==4.67.1",
+#     "useful-rdkit-utils==0.92",
 #     "bblean",
 # ]
 # ///
@@ -79,16 +79,8 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     Import the libraries we will need for the analysis.
-    This notebook uses [BitBIRCH-Lean](https://www.biorxiv.org/content/10.1101/2025.10.22.684015v1) - a more memory efficient version of the [BitBIRCH](https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00030k) clustering method developed by the [Miranda-Quintan research group at the University of Florida](https://quintana.chem.ufl.edu/).
     If you run this notebook with the `--sandbox` flag, the dependencies will be installed for you.
-
-    As a first step, we'll grab a function I wrote to wrap bbllean from GitHub.
     """)
-    return
-
-
-@app.cell
-def _():
     return
 
 
