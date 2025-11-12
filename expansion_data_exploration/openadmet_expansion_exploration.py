@@ -54,7 +54,7 @@ def _(mo):
      means that a variable can only be defined once in a **marimo** notebook.
         3. When you run a **marimo** notebook, it first checks to see if you have the necessary libraries installed. If you don't, **marimo** will ask if you'd to install them, and install them for you. This makes it easy to share **marimo** notebooks with others without worrying about d\
     ependencies.
-        4. When you open an existing **marimo** notebook, it runs the code in all the cells. As a result, it can take some time to start. Wait for the spinning hourglass in the upper left corner to disappear.
+
 
         If you're viewing the static HTML version of this notebook, you're missing out on the interactivity that **marimo** offers. To experience the full features, please consider running this notebook in a **marimo** environment. It's easy to do:
         1. Download [this notebook](https://raw.githubusercontent.com/PatWalters/practical_cheminformatics_posts/refs/heads/main/expansion_data_exploration/bblean_cluster.py) from GitHub. Note that **marimo** notebooks are simply Python files with a .py extension.  You can download the file from the commandline with this command.
@@ -121,7 +121,7 @@ def _():
 @app.cell
 def _():
     # set a notebook global to determine whether progress bars are displayed.  I mainly did this to make the HTML version look nicer. 
-    hide_progress = True
+    hide_progress = False
     return (hide_progress,)
 
 
@@ -274,9 +274,9 @@ def _(mo):
 
 
 @app.cell
-def _(assay_cols, np, pd, tqdm, train_df, uru):
+def _(assay_cols, hide_progress, np, pd, tqdm, train_df, uru):
     max_cor_res = []
-    for a in tqdm(assay_cols,disable=True):
+    for a in tqdm(assay_cols,disable=hide_progress):
         vals = np.isfinite(train_df[a])
         max_cor_res.append([a,uru.max_possible_correlation(vals)])
     max_cor_df = pd.DataFrame(max_cor_res,columns=["Assay","Max Possible Correlation"])
