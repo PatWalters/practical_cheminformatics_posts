@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+# Large data files that can be downloaded/generated
+chembl_uniprot_mapping.txt
