@@ -1,0 +1,103 @@
+Target Name,Target Class
+aa2ar,GPCR
+akt1,Kinase
+cah2,Miscellaneous
+def,Miscellaneous
+fa10,Protease
+gcr,Nuclear Receptor
+hivrt,Miscellaneous
+kif11,Miscellaneous
+met,Kinase
+pa2ga,Miscellaneous
+ppard,Nuclear Receptor
+rock1,Kinase
+tryb1,Protease
+abl1,Kinase
+akt2,Kinase
+casp3,Protease
+dhi1,Miscellaneous
+fa7,Protease
+glcm,Miscellaneous
+hmdh,Miscellaneous
+kit,Kinase
+mk01,Kinase
+parp1,Miscellaneous
+pparg,Nuclear Receptor
+rxra,Nuclear Receptor
+tysy,Miscellaneous
+ace,Protease
+aldr,Miscellaneous
+cdk2,Kinase
+dpp4,Protease
+fabp4,Miscellaneous
+gria2,Ion Channel
+hs90a,Miscellaneous
+kith,Kinase
+mk10,Kinase
+pde5a,Miscellaneous
+prgr,Nuclear Receptor
+sahh,Miscellaneous
+urok,Protease
+aces,Miscellaneous
+ampc,Miscellaneous
+comt,Miscellaneous
+drd3,GPCR
+fak1,Kinase
+grik1,Ion Channel
+hxk4,Kinase
+kpcb,Kinase
+mk14,Kinase
+pgh1,Miscellaneous
+ptn1,Miscellaneous
+src,Kinase
+vgfr2,Kinase
+ada,Miscellaneous
+andr,Nuclear Receptor
+cp2c9,Cytochrome P450
+dyr,Miscellaneous
+fgfr1,Kinase
+hdac2,Miscellaneous
+igf1r,Kinase
+lck,Kinase
+mmp13,Protease
+pgh2,Miscellaneous
+pur2,Miscellaneous
+tgfr1,Kinase
+wee1,Kinase
+ada17,Protease
+aofb,Miscellaneous
+cp3a4,Cytochrome P450
+egfr,Kinase
+fkb1a,GPCR
+hdac8,Miscellaneous
+inha,Miscellaneous
+lkha4,Miscellaneous
+mp2k1,Kinase
+plk1,Kinase
+pygm,Miscellaneous
+thb,Protease
+xiap,Miscellaneous
+adrb1,GPCR
+bace1,Protease
+csf1r,Kinase
+esr1,Nuclear Receptor
+fnta,Miscellaneous
+hivint,Miscellaneous
+ital,Miscellaneous
+mapk2,Kinase
+nos1,Miscellaneous
+pnph,Miscellaneous
+pyrd,Miscellaneous
+thrb,Nuclear Receptor
+adrb2,GPCR
+braf,Kinase
+cxcr4,GPCR
+esr2,Nuclear Receptor
+fpps,Miscellaneous
+hivpr,Protease
+jak2,Kinase
+mcr,Nuclear Receptor
+nram,Miscellaneous
+ppara,Nuclear Receptor
+reni,Protease
+try1,Protease

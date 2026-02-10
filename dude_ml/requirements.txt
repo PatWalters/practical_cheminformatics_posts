@@ -1,0 +1,11 @@
+pandas
+requests
+biopython
+jupyter
+scikit-learn
+matplotlib
+seaborn
+rdkit
+lightgbm
+tqdm
+useful_rdkit_utils
