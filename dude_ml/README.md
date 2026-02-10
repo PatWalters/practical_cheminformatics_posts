@@ -1,4 +1,4 @@
-This code accompanies my blog post "AI in Drug Discovery - Please Stop Finishing in the Bathtub"
+This code accompanies my blog post ["AI in Drug Discovery - Please Stop Finishing in the Bathtub"](https://patwalters.github.io/Please-Stop-Fishing/)
 
 ## Structure
 
