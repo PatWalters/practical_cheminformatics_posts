@@ -1,6 +1,4 @@
-# DUDE-ML Kinase Analysis
-
-This project analyzes kinase sequences from the DUD-E database, fetches their sequences from UniProt, calculates sequence similarities, and builds machine learning models.
+This code accompanies my blog post "AI in Drug Discovery - Please Stop Finishing in the Bathtub"
 
 ## Structure
 
